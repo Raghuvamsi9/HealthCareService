@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <parameter name="os" value="windows"/>
+  <listeners>
+    <listener class-name="Utilities.ExtentReportManager1"/>
+  </listeners>
+  <test thread-count="5" parallel="tests" name="Test1(failed)">
+    <parameter name="browser" value="chrome"/>
+    <groups>
+      <run>
+        <include name="sanity"/>
+        <include name="master"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="TestCases.TC_001LoginTest">
+        <methods>
+          <include name="closebrowser"/>
+          <include name="openbrowser"/>
+          <include name="verify_Login"/>
+        </methods>
+      </class> <!-- TestCases.TC_001LoginTest -->
+    </classes>
+  </test> <!-- Test1(failed) -->
+  <test thread-count="5" parallel="tests" name="Test2(failed)">
+    <parameter name="browser" value="edge"/>
+    <groups>
+      <run>
+        <include name="sanity"/>
+        <include name="master"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="TestCases.TC_001LoginTest">
+        <methods>
+          <include name="closebrowser"/>
+          <include name="openbrowser"/>
+          <include name="verify_Login"/>
+        </methods>
+      </class> <!-- TestCases.TC_001LoginTest -->
+    </classes>
+  </test> <!-- Test2(failed) -->
+</suite> <!-- Failed suite [Suite] -->
